@@ -1,16 +1,26 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
 import com.google.android.gms.ads.MobileAds;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
+import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
+import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 import com.udacity.jokedisplaylibrary.JokeDisplayActivity;
 import com.udacity.joketellinglibrary.JokeTellingClass;
 
+import java.io.IOException;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -50,14 +60,18 @@ public class MainActivity extends AppCompatActivity {
         JokeTellingClass jokeTellingClass = new JokeTellingClass();
         String joke = jokeTellingClass.getJoke();
 
-        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, JokeDisplayActivity.class);
         intent.putExtra("joke", joke);
         startActivity(intent);
 
-        //        Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
+        //TODO EndpointsAsyncTask
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
+
     }
+
+
 
 //    public void launchJokeDisplayLibraryActivity(View view) {
 //
