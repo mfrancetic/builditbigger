@@ -8,6 +8,7 @@ import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.google.appengine.repackaged.com.google.common.base.Pair;
+import com.udacity.joketellinglibrary.JokeTellingClass;
 
 
 import java.io.IOException;
@@ -40,6 +41,19 @@ public class MyEndpoint {
         return response;
     }
 
+
+//    @ApiMethod(name = "getJoke")
+//    public MyBean getJoke() {
+//        MyBean response = new MyBean();
+//
+//        JokeTellingClass jokeTellingClass = new JokeTellingClass();
+//
+//         String joke = jokeTellingClass.getJoke();
+//
+//        response.setData(joke);
+//
+//        return response;
+//    }
 
 
 }

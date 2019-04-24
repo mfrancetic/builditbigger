@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         //TODO EndpointsAsyncTask
         new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
 
+//        new EndpointsAsyncTask().execute(this).execute();
     }
 
 

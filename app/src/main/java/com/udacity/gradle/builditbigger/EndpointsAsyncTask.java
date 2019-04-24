@@ -10,14 +10,27 @@ import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
+import com.udacity.joketellinglibrary.JokeTellingClass;
+
+import com.udacity.jokedisplaylibrary.JokeDisplayActivity;
+import com.udacity.gradle.builditbigger.backend.myApi.model.MyBean;
+
 
 import java.io.IOException;
 
 class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
 
-    private MyApi myApiService = null;
+    private static MyApi myApiService = null;
+
+    private JokeTellingClass jokeTellingClass;
 
     private Context context;
+
+
+//
+//    @Override
+//    protected String doInBackground(Context context) {
+//
 
     @Override
     protected String doInBackground(Pair<Context, String>... params) {
@@ -40,17 +53,33 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
         }
 
         context = params[0].first;
+
+
         String name = params[0].second;
 
+//        jokeTellingClass = new JokeTellingClass();
+
+
+
         try {
+//            return myApiService.getJoke().execute.getData();
+
+
             return myApiService.sayHi(name).execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
     }
 
+
+
     @Override
     protected void onPostExecute(String result) {
+
+        if (result != null) {
+
+        }
+
         Toast.makeText(context, result, Toast.LENGTH_LONG).show();
     }
 }

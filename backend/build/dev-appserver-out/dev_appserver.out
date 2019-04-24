@@ -1,3 +1,6 @@
-Error opening zip file or JAR manifest missing : C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\tools\java\lib\agent\appengine-agent.jar
-Error occurred during initialization of VM
-agent library failed to init: instrument
+java.lang.IllegalArgumentException: the Java7 runtime is not supported anymore.
+	at com.google.appengine.tools.development.SharedMain.configureRuntime(SharedMain.java:258)
+	at com.google.appengine.tools.development.DevAppServerMain$StartAction.apply(DevAppServerMain.java:374)
+	at com.google.appengine.tools.util.Parser$ParseResult.applyArgs(Parser.java:45)
+	at com.google.appengine.tools.development.DevAppServerMain.run(DevAppServerMain.java:257)
+	at com.google.appengine.tools.development.DevAppServerMain.main(DevAppServerMain.java:248)
