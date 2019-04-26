@@ -40,7 +40,9 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
                     // options for running against local devappserver
                     // - 10.0.2.2 is localhost's IP address in Android emulator
                     // - turn off compression when running against local devappserver
-                    .setRootUrl("http://10.0.2.2:8080/_ah/api/")
+//                    .setRootUrl("http://127.0.0.1:8080/_ah/api/")
+//                    .setRootUrl("https://192.168.2.145:8080/_ah/api")
+                    .setRootUrl("http://10.0.2.2:8080/_ah/api")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
@@ -48,22 +50,16 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
                         }
                     });
             // end options for devappserver
-
             myApiService = builder.build();
         }
 
         context = params[0].first;
-
-
         String name = params[0].second;
 
 //        jokeTellingClass = new JokeTellingClass();
 
-
-
         try {
 //            return myApiService.getJoke().execute.getData();
-
 
             return myApiService.sayHi(name).execute().getData();
         } catch (IOException e) {
@@ -72,14 +68,11 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
     }
 
 
-
     @Override
     protected void onPostExecute(String result) {
 
-        if (result != null) {
-
-        }
-
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+//        if (result != null) {
+            Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+//        }
     }
 }

@@ -31,7 +31,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MobileAds.initialize(this, getString(R.string.banner_ad_unit_id));
+
+
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
+
     }
+
 
 
     @Override
@@ -67,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
         //TODO EndpointsAsyncTask
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
 
 //        new EndpointsAsyncTask().execute(this).execute();
     }
