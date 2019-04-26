@@ -37,6 +37,10 @@ android {
     }
 }
 
+configurations {
+    all*.exclude module: 'guava-jdk5'
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     endpointsServer project(path: ':backend', configuration: 'endpoints')
@@ -51,6 +55,7 @@ dependencies {
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
     implementation project(':JokeTellingLibrary')
     implementation project(':jokedisplaylibrary')
+    implementation project (':backend')
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })

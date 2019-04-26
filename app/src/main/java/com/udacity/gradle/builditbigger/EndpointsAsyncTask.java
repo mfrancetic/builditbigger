@@ -1,6 +1,7 @@
 package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
 import android.widget.Toast;
@@ -11,9 +12,11 @@ import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 import com.udacity.joketellinglibrary.JokeTellingClass;
+import com.udacity.gradle.builditbigger.backend.MyBean;
+import com.udacity.gradle.builditbigger.backend.MyEndpoint;
+
 
 import com.udacity.jokedisplaylibrary.JokeDisplayActivity;
-import com.udacity.gradle.builditbigger.backend.myApi.model.MyBean;
 
 
 import java.io.IOException;
@@ -54,14 +57,14 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
         }
 
         context = params[0].first;
-        String name = params[0].second;
+        String joke = params[0].second;
 
 //        jokeTellingClass = new JokeTellingClass();
 
         try {
-//            return myApiService.getJoke().execute.getData();
+            return myApiService.getJoke().execute().getData();
 
-            return myApiService.sayHi(name).execute().getData();
+//            return myApiService.sayHi(name).execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
@@ -71,8 +74,17 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
     @Override
     protected void onPostExecute(String result) {
 
+        if (result != null) {
+            Intent intent = new Intent(context, JokeDisplayActivity.class);
+            intent.putExtra("joke", result);
+            context.startActivity(intent);
+        }
+//        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+
+
+
 //        if (result != null) {
-            Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+//            Toast.makeText(context, result, Toast.LENGTH_LONG).show();
 //        }
     }
 }

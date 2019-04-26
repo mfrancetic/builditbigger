@@ -32,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         MobileAds.initialize(this, getString(R.string.banner_ad_unit_id));
 
-
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
+//        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
 
     }
 
@@ -62,16 +61,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
+
         JokeTellingClass jokeTellingClass = new JokeTellingClass();
         String joke = jokeTellingClass.getJoke();
 
+        new EndpointsAsyncTask().execute(new Pair<>(this, joke));
+
+
+
+
 //        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, JokeDisplayActivity.class);
-        intent.putExtra("joke", joke);
-        startActivity(intent);
-
-        //TODO EndpointsAsyncTask
+//        Intent intent = new Intent(this, JokeDisplayActivity.class);
+//        intent.putExtra("joke", joke);
+//        startActivity(intent);
 
 //        new EndpointsAsyncTask().execute(this).execute();
     }
