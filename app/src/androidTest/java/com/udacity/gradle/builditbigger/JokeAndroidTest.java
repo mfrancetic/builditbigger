@@ -37,7 +37,7 @@ public class JokeAndroidTest  {
 
     Context context = activityTestRule.getActivity().getBaseContext();
     String joke = "Joke 1";
-    
+
     EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
 
     endpointsAsyncTask.execute(new Pair<>(context, joke));
