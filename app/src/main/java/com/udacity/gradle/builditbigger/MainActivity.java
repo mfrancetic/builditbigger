@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
 //        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
 
-//        Intent intent = new Intent(this, JokeDisplayActivity.class);
-//        intent.putExtra("joke", joke);
-//        startActivity(intent);
+        Intent intent = new Intent(this, JokeDisplayActivity.class);
+        intent.putExtra("joke", joke);
+        startActivity(intent);
 
 //        new EndpointsAsyncTask().execute(this).execute();
     }

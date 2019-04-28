@@ -19,31 +19,39 @@ import android.support.test.runner.AndroidJUnitRunner;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import org.junit.runner.RunWith;
 
+import java.util.concurrent.ExecutionException;
 
-@RunWith (AndroidJUnit4.class)
-public class JokeAndroidTest  {
+
+@RunWith(AndroidJUnit4.class)
+public class JokeAndroidTest {
 
     private IdlingResource idlingResource;
 
-@Rule
+    @Rule
     public final ActivityTestRule<MainActivity> activityTestRule =
-    new ActivityTestRule<>(MainActivity.class);
+            new ActivityTestRule<>(MainActivity.class);
 
-@Test
-    public void asyncTask_returnsString() {
+    @Test
+    public void asyncTask_returnsString() throws ExecutionException, InterruptedException {
 
-    Context context = activityTestRule.getActivity().getBaseContext();
-    String joke = "Joke 1";
+        Context context = activityTestRule.getActivity().getBaseContext();
+        String joke = "Joke 1";
 
-    EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
+        EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
 
-    endpointsAsyncTask.execute(new Pair<>(context, joke));
+        endpointsAsyncTask.execute(new Pair<>(context, joke));
 
-    assertNotSame("", joke);
-}
+        String result = endpointsAsyncTask.get();
 
+//        String result = endpointsAsyncTask.get();
 
+//        Log.i("result is", "result is" + result);
+
+//
+        assertNotSame("", result);
+    }
 }
