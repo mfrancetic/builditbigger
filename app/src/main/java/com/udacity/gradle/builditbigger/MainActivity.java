@@ -15,7 +15,7 @@ import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
-import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
+//import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 import com.udacity.jokedisplaylibrary.JokeDisplayActivity;
 import com.udacity.joketellinglibrary.JokeTellingClass;
 
@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        MobileAds.initialize(this, getString(R.string.banner_ad_unit_id));
 
 //        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
 
@@ -65,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         String joke = jokeTellingClass.getJoke();
 
         new EndpointsAsyncTask().execute(new Pair<>(this, joke));
+
+
 
 
 //        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
