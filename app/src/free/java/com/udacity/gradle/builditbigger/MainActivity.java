@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MobileAds.initialize(this, getString(R.string.banner_ad_unit_id));
 
 //        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
 
