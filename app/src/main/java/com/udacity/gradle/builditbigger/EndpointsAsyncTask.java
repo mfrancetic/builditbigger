@@ -29,6 +29,8 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
 
     private Context context;
 
+    String joke;
+
 
 //
 //    @Override
@@ -57,7 +59,7 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
         }
 
         context = params[0].first;
-        String joke = params[0].second;
+        joke = params[0].second;
 
 //        jokeTellingClass = new JokeTellingClass();
 
@@ -74,17 +76,11 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
     @Override
     protected void onPostExecute(String result) {
 
+        result = joke;
         if (result != null) {
             Intent intent = new Intent(context, JokeDisplayActivity.class);
             intent.putExtra("joke", result);
             context.startActivity(intent);
         }
-//        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
-
-
-
-//        if (result != null) {
-//            Toast.makeText(context, result, Toast.LENGTH_LONG).show();
-//        }
     }
 }

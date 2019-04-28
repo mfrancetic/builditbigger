@@ -66,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
         new EndpointsAsyncTask().execute(new Pair<>(this, joke));
 
 
-
-
 //        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
 
 //        Intent intent = new Intent(this, JokeDisplayActivity.class);
