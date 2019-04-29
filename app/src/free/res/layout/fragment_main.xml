@@ -12,9 +12,8 @@
     tools:context=".MainActivityFragment">
 
     <TextView
+        style="@style/TextViewStyle"
         android:id="@+id/instructions_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/instructions" />
 
     <Button
