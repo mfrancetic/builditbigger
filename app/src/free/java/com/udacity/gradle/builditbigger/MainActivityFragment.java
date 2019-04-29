@@ -30,7 +30,6 @@ public class MainActivityFragment extends Fragment {
 
         MobileAds.initialize(getActivity().getApplicationContext(), getString(R.string.banner_ad_id));
 
-
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         mAdView.setVisibility(View.VISIBLE);
 
@@ -38,7 +37,7 @@ public class MainActivityFragment extends Fragment {
         // get test ads on a physical device. e.g.
         // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
 
-        String deviceIdEmulator = "B3EEABB8EE11C2BE770B684D95219ECB";
+//        String deviceIdEmulator = "B3EEABB8EE11C2BE770B684D95219ECB";
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
 //                .addTestDevice(deviceIdEmulator)

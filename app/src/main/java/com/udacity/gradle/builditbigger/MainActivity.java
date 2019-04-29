@@ -22,20 +22,27 @@ import com.udacity.joketellinglibrary.JokeTellingClass;
 
 import java.io.IOException;
 
-
 public class MainActivity extends AppCompatActivity {
+
+    private String joke;
+
+    private String jokeKey = "joke";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-//        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
-
+        if (savedInstanceState != null) {
+            joke = savedInstanceState.getString(jokeKey);
+        }
     }
 
-
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString(jokeKey, joke);
+        super.onSaveInstanceState(outState);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -58,42 +65,21 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
     public void tellJoke(View view) {
 
-//        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
-
-//        JokeTellingClass jokeTellingClass = new JokeTellingClass();
-//        String joke = jokeTellingClass.getJoke();
-
-        EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
-
-        endpointsAsyncTask.execute();
-
-        String result = null;
-
-        try {
-            result = endpointsAsyncTask.get();
-        } catch (Exception e) {
-            Log.e("exception", "exception is" + e);
+        if (joke == null) {
+            EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
+            endpointsAsyncTask.execute();
+            try {
+                joke = endpointsAsyncTask.get();
+            } catch (Exception e) {
+                Log.e("exception", "exception is" + e);
+            }
         }
 
-////        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
-//
-//        Intent intent = new Intent(this, JokeDisplayActivity.class);
-//        intent.putExtra("joke", result);
-//        startActivity(intent);
-
         Intent intent = new Intent(this, JokeDisplayActivity.class);
-        intent.putExtra("joke", result);
+        intent.putExtra(jokeKey, joke);
         startActivity(intent);
 
-//        new EndpointsAsyncTask().execute(this).execute();
     }
-
-
-
-//    public void launchJokeDisplayLibraryActivity(View view) {
-//
-//    }
 }

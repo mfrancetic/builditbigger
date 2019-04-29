@@ -12,6 +12,10 @@ import android.widget.TextView;
 
 public class JokeDisplayFragment extends Fragment {
 
+    private String joke;
+
+    private String jokeKey = "joke";
+
     public JokeDisplayFragment() {
     }
 
@@ -22,11 +26,23 @@ public class JokeDisplayFragment extends Fragment {
         TextView jokeTextView = rootView.findViewById(R.id.joke_text_view);
         
         if (getActivity()!= null) {
-            Intent intent = getActivity().getIntent();
-            String joke = intent.getStringExtra("joke");
+
+            if (savedInstanceState != null) {
+                joke = savedInstanceState.getString(jokeKey);
+            } else {
+                Intent intent = getActivity().getIntent();
+                joke = intent.getStringExtra("joke");
+            }
+
             jokeTextView.setText(joke);
         }
 
         return rootView;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString(jokeKey, joke);
+        super.onSaveInstanceState(outState);
     }
 }
