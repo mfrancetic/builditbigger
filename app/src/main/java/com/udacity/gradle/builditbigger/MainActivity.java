@@ -33,16 +33,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (savedInstanceState != null) {
-            joke = savedInstanceState.getString(jokeKey);
-        }
+//        if (savedInstanceState != null) {
+//            joke = savedInstanceState.getString(jokeKey);
+//        }
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState.putString(jokeKey, joke);
-        super.onSaveInstanceState(outState);
-    }
+//    @Override
+//    protected void onSaveInstanceState(Bundle outState) {
+//        outState.putString(jokeKey, joke);
+//        super.onSaveInstanceState(outState);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void tellJoke(View view) {
 
-        if (joke == null) {
+//        if (joke == null) {
             EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
             endpointsAsyncTask.execute();
             try {
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 Log.e("exception", "exception is" + e);
             }
-        }
+//        }
 
         Intent intent = new Intent(this, JokeDisplayActivity.class);
         intent.putExtra(jokeKey, joke);

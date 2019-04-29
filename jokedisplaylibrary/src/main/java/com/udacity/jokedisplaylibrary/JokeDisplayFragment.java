@@ -45,4 +45,6 @@ public class JokeDisplayFragment extends Fragment {
         outState.putString(jokeKey, joke);
         super.onSaveInstanceState(outState);
     }
+
+
 }

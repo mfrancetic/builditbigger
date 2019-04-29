@@ -18,7 +18,9 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:configChanges="orientation"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +30,9 @@
 
         <activity
             android:name="com.udacity.jokedisplaylibrary.JokeDisplayActivity"
-            android:label="@string/joke_display_name"></activity> <!-- Include the AdActivity configChanges and theme. -->
+            android:label="@string/joke_display_name"
+            android:configChanges="orientation"
+            ></activity> <!-- Include the AdActivity configChanges and theme. -->
 
     </application>
 
