@@ -21,7 +21,7 @@ import com.udacity.jokedisplaylibrary.JokeDisplayActivity;
 
 import java.io.IOException;
 
-class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
+class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
 
     private static MyApi myApiService = null;
 
@@ -37,8 +37,13 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
 //    protected String doInBackground(Context context) {
 //
 
+//    @Override
+//    protected String doInBackground(<Void, Void, String>) {
+
+//    }
+
     @Override
-    protected String doInBackground(Pair<Context, String>... params) {
+    protected String doInBackground(Void... voids) {
         if (myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -58,14 +63,13 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
             myApiService = builder.build();
         }
 
-        context = params[0].first;
-        joke = params[0].second;
+//        context = params[0].first;
+//        joke = params[0].second;
 
 //        jokeTellingClass = new JokeTellingClass();
 
         try {
             return myApiService.getJoke().execute().getData();
-
 //            return myApiService.sayHi(name).execute().getData();
         } catch (IOException e) {
             return e.getMessage();

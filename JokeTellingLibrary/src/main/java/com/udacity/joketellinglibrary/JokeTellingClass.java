@@ -20,6 +20,7 @@ public class JokeTellingClass {
                     "\"Can you please hold my hand?\"A mother asks her son: \"Anton, do you think I’m a bad mom?\" \n Son: \"My name is Paul.\"",
 
                     "Two donkeys are standing at a roadside, one asks the other: \"So, shall we cross?\" \n The other shakes his head: \"No way, look at what happened to the zebra.\"",
+
                     "Guest to the waiter: \"Can you bring me what the lady at the next table is having?\" \n Waiter: “Sorry, sir, but I’m pretty sure she wants to eat it herself.\"",
 
                     "\"Mom, where do tampons go?\" \n \"Where the babies come from, darling.\"\n In the stork?\"",
@@ -27,6 +28,7 @@ public class JokeTellingClass {
                     "A husband and a wife sit at the table, having dinner. The woman drops a bit of tomato sauce on her white top. \"Oh no, I look like a pig!\"\n The man nods, \"And you dropped tomato sauce on your top!\"",
 
                     "Husband: \"Wow, honey, you look really different today. Did you do something to your hair?\" \n Wife: \"Michael, I’m over here!\"",
+
 
                     "One of the most wonderful things in life is to wake up and enjoy a cuddle with somebody; unless you are in prison."
             };

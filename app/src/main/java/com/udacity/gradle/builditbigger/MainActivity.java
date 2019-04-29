@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -60,16 +61,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view) {
 
-        JokeTellingClass jokeTellingClass = new JokeTellingClass();
-        String joke = jokeTellingClass.getJoke();
-
-        new EndpointsAsyncTask().execute(new Pair<>(this, joke));
-
-
 //        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
 
+//        JokeTellingClass jokeTellingClass = new JokeTellingClass();
+//        String joke = jokeTellingClass.getJoke();
+
+        EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
+
+        endpointsAsyncTask.execute();
+
+        String result = null;
+
+        try {
+            result = endpointsAsyncTask.get();
+        } catch (Exception e) {
+            Log.e("exception", "exception is" + e);
+        }
+
+////        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
+//
+//        Intent intent = new Intent(this, JokeDisplayActivity.class);
+//        intent.putExtra("joke", result);
+//        startActivity(intent);
+
         Intent intent = new Intent(this, JokeDisplayActivity.class);
-        intent.putExtra("joke", joke);
+        intent.putExtra("joke", result);
         startActivity(intent);
 
 //        new EndpointsAsyncTask().execute(this).execute();

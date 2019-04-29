@@ -43,15 +43,10 @@ public class JokeAndroidTest {
 
         EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
 
-        endpointsAsyncTask.execute(new Pair<>(context, joke));
+        endpointsAsyncTask.execute();
 
         String result = endpointsAsyncTask.get();
 
-//        String result = endpointsAsyncTask.get();
-
-//        Log.i("result is", "result is" + result);
-
-//
         assertNotSame("", result);
     }
 }
