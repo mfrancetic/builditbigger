@@ -243,5 +243,14 @@
     <orderEntry type="module" module-name="jokedisplaylibrary" />
     <orderEntry type="module" module-name="JokeTellingLibrary" />
     <orderEntry type="module" module-name="backend" />
+    <orderEntry type="module" module-name="jokedisplaylibrary" />
+    <orderEntry type="module" module-name="JokeTellingLibrary" />
+    <orderEntry type="module" module-name="backend" />
+    <orderEntry type="module" module-name="jokedisplaylibrary" />
+    <orderEntry type="module" module-name="JokeTellingLibrary" />
+    <orderEntry type="module" module-name="backend" />
+    <orderEntry type="module" module-name="jokedisplaylibrary" />
+    <orderEntry type="module" module-name="JokeTellingLibrary" />
+    <orderEntry type="module" module-name="backend" />
   </component>
 </module>
