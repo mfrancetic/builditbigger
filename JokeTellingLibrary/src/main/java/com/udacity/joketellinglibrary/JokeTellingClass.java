@@ -2,12 +2,17 @@ package com.udacity.joketellinglibrary;
 
 import java.util.Random;
 
+/**
+ * Java library that supplies the app with jokes
+ */
 public class JokeTellingClass {
 
+    /**
+     * The method returns a joke from the array of strings
+     */
     public String getJoke() {
         {
             String currentJoke;
-
             String[] jokes = {
                     "Doctor: \"I'm sorry but you suffer from a terminal illness and have only 10 to live.\" \n Patient: \"What do you mean, 10? 10 what? Months? Weeks?!\" \n Doctor: \"Nine.\"",
 
@@ -29,14 +34,12 @@ public class JokeTellingClass {
 
                     "Husband: \"Wow, honey, you look really different today. Did you do something to your hair?\" \n Wife: \"Michael, I’m over here!\"",
 
-
                     "One of the most wonderful things in life is to wake up and enjoy a cuddle with somebody; unless you are in prison."
             };
 
+            /* Return a random joke */
             Random random = new Random();
-
             currentJoke = jokes[random.nextInt(jokes.length)];
-
             return currentJoke;
         }
     }

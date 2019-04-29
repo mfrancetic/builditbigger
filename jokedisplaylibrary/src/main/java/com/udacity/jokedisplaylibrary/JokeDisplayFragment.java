@@ -22,21 +22,18 @@ public class JokeDisplayFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_joke_display, container, false);
-
-        TextView jokeTextView = rootView.findViewById(R.id.joke_text_view);
         
-        if (getActivity()!= null) {
+        TextView jokeTextView = rootView.findViewById(R.id.joke_text_view);
 
+        if (getActivity() != null) {
             if (savedInstanceState != null) {
                 joke = savedInstanceState.getString(jokeKey);
             } else {
                 Intent intent = getActivity().getIntent();
                 joke = intent.getStringExtra("joke");
             }
-
             jokeTextView.setText(joke);
         }
-
         return rootView;
     }
 
@@ -45,6 +42,4 @@ public class JokeDisplayFragment extends Fragment {
         outState.putString(jokeKey, joke);
         super.onSaveInstanceState(outState);
     }
-
-
 }

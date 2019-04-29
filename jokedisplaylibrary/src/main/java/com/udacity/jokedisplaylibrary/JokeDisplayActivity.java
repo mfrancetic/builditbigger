@@ -1,12 +1,12 @@
 package com.udacity.jokedisplaylibrary;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.View;
 
+/**
+ * Activity that displays the joke
+ */
 public class JokeDisplayActivity extends AppCompatActivity {
 
     @Override
@@ -14,5 +14,4 @@ public class JokeDisplayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joke_display);
     }
-
 }
