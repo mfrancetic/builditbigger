@@ -13,7 +13,6 @@ buildscript {
 
 android {
     compileSdkVersion 28
-
     defaultConfig {
         applicationId "com.udacity.gradle.builditbigger"
         minSdkVersion 16
@@ -21,7 +20,6 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -33,8 +31,7 @@ android {
     }
 
     flavorDimensions "version"
-
-    productFlavors{
+    productFlavors {
         free {
             dimension "version"
             applicationId "com.udacity.gradle.builditbigger.free"
@@ -44,7 +41,6 @@ android {
             applicationId "com.udacity.gradle.builditbigger.paid"
         }
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -75,7 +71,7 @@ dependencies {
 
     implementation project(':JokeTellingLibrary')
     implementation project(':jokedisplaylibrary')
-    implementation project (':backend')
+    implementation project(':backend')
 
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

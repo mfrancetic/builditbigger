@@ -20,6 +20,7 @@ public class JokeDisplayFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, @Nullable Bundle savedInstanceState) {
+        /* Inflate the view */
         View rootView = inflater.inflate(R.layout.fragment_joke_display, container, false);
 
         TextView jokeTextView = rootView.findViewById(R.id.joke_text_view);

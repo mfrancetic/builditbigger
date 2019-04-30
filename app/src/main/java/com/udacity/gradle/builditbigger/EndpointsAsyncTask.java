@@ -1,6 +1,5 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
 import android.os.AsyncTask;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -15,14 +14,15 @@ class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
 
     private static MyApi myApiService = null;
 
-    private Context context;
-
     @Override
     protected String doInBackground(Void... voids) {
-        if (myApiService == null) {  // Only do this once
+
+        String rootUrl = "http://10.0.2.2:8080/_ah/api";
+
+        if (myApiService == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
-                    .setRootUrl("http://10.0.2.2:8080/_ah/api")
+                    .setRootUrl(rootUrl)
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) {
@@ -32,6 +32,7 @@ class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
             myApiService = builder.build();
         }
         try {
+            /* Return the joke using the myApiService */
             return myApiService.getJoke().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
