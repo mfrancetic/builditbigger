@@ -9,10 +9,3 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
 }
-
-
-
-sourceCompatibility = 1.8
-
-sourceCompatibility = "8"
-targetCompatibility = "8"

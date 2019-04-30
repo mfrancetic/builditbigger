@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     private String joke;
 
-    private String jokeKey = "joke";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
      * open the JokeDisplayActivity
      */
     public void tellJoke(View view) {
+        String jokeKey = "joke";
+
+        /* Create and execute an EndpointsAsyncTask */
         EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
         endpointsAsyncTask.execute();
         try {

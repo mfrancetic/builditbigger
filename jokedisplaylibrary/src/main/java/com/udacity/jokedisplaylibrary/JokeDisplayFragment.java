@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class JokeDisplayFragment extends Fragment {
 
     private String joke;
-    private String jokeKey = "joke";
+    private final String jokeKey = "joke";
 
     public JokeDisplayFragment() {
     }
