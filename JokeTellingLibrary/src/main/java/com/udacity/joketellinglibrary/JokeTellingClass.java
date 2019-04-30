@@ -36,7 +36,6 @@ public class JokeTellingClass {
 
                     "One of the most wonderful things in life is to wake up and enjoy a cuddle with somebody; unless you are in prison."
             };
-
             /* Return a random joke */
             Random random = new Random();
             currentJoke = jokes[random.nextInt(jokes.length)];

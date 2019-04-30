@@ -18,7 +18,6 @@ import com.udacity.joketellinglibrary.JokeTellingClass;
         )
 )
 public class MyEndpoint {
-
     /**
      * An endpoint method that returns a joke supplied from the JokeTellingClass library
      */
@@ -26,6 +25,7 @@ public class MyEndpoint {
     public MyBean getJoke() {
         MyBean response = new MyBean();
 
+        /* Get the joke from the jokeTellingClass and set the data of the response  */
         JokeTellingClass jokeTellingClass = new JokeTellingClass();
         String joke = jokeTellingClass.getJoke();
         response.setData(joke);

@@ -1,5 +1,4 @@
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:textColor">@color/colorText</item>
@@ -9,6 +8,7 @@
         <item name="android:textSize">@dimen/text_size</item>
     </style>
 
+    <!-- Style of the button -->
     <style name="ButtonStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -18,9 +18,9 @@
         <item name="android:textSize">@dimen/button_text_size</item>
         </style>
 
+    <!-- Style of the TextView -->
     <style name="TextViewStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
-
 </resources>

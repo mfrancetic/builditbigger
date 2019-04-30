@@ -13,7 +13,6 @@ import android.widget.TextView;
 public class JokeDisplayFragment extends Fragment {
 
     private String joke;
-
     private String jokeKey = "joke";
 
     public JokeDisplayFragment() {
@@ -22,16 +21,20 @@ public class JokeDisplayFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_joke_display, container, false);
-        
+
         TextView jokeTextView = rootView.findViewById(R.id.joke_text_view);
 
         if (getActivity() != null) {
+            /* Check if the savedInstanceState exists.  */
             if (savedInstanceState != null) {
+                /* If the savedInstanceState exists, retrieve the saved joke */
                 joke = savedInstanceState.getString(jokeKey);
             } else {
+                /* If the savedInstanceState doesn't exist, retrieve the joke from the intent */
                 Intent intent = getActivity().getIntent();
-                joke = intent.getStringExtra("joke");
+                joke = intent.getStringExtra(jokeKey);
             }
+            /* Set the text of the jokeTextView to the joke */
             jokeTextView.setText(joke);
         }
         return rootView;
