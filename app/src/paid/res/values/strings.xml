@@ -1,6 +1,6 @@
 <resources>
     <!-- Name of the app -->
-    <string name="app_name">Build it Bigger</string>
+    <string name="app_name" translatable="false">Build it Bigger</string>
     <!-- Text for the instructions TextView -->
     <string name="instructions">Press the button for a delicious joke!</string>
     <!-- Text of the "Tell Joke" button that retrieves jokes -->
@@ -8,5 +8,5 @@
     <!-- Title of the settings -->
     <string name="action_settings">Settings</string>
     <!-- Title of the JokeDisplayActivity -->
-    <string name="joke_display_name">Joke Display</string>
+    <string name="joke_display_name" translatable="false">Joke Display</string>
 </resources>

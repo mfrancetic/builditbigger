@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="instructions">Pritisnite tipku kako biste dobili odličnu šalu!</string>
+    <string name="button_text">Reci šalu</string>
+    <string name="action_settings">Postavke</string>
+</resources>

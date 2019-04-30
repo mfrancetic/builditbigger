@@ -1,9 +1,16 @@
 <resources>
+    <!-- Name of the app -->
     <string name="app_name">Build it Bigger</string>
+    <!-- Text for the instructions TextView -->
     <string name="instructions">Press the button for a delicious joke!</string>
+    <!-- Text of the "Tell Joke" button that retrieves jokes -->
     <string name="button_text">Tell Joke</string>
+    <!-- Title of the settings -->
     <string name="action_settings">Settings</string>
+    <!-- Title of the JokeDisplayActivity -->
     <string name="joke_display_name">Joke Display</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544~6300978111</string>
-    <string name="banner_ad_id">ca-app-pub-3940256099942544/6300978111</string>
+    <!-- ID of the banner ad unit -->
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544~6300978111</string>
+    <!-- ID of the banner ad -->
+    <string name="banner_ad_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
 </resources>
