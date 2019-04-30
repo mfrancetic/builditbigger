@@ -8,5 +8,5 @@
     <!-- Title of the settings -->
     <string name="action_settings">Settings</string>
     <!-- Title of the JokeDisplayActivity -->
-    <string name="joke_display_name" translatable="false">Joke Display</string>
+    <string name="joke_display_name">Joke</string>
 </resources>

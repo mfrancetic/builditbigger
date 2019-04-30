@@ -8,7 +8,7 @@
     <!-- Title of the settings -->
     <string name="action_settings">Settings</string>
     <!-- Title of the JokeDisplayActivity -->
-    <string name="joke_display_name">Joke Display</string>
+    <string name="joke_display_name">Joke</string>
     <!-- ID of the banner ad unit -->
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544~6300978111</string>
     <!-- ID of the banner ad -->
