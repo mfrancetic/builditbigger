@@ -30,7 +30,7 @@ public class JokeDisplayFragment extends Fragment {
             if (savedInstanceState != null) {
                 /* If the savedInstanceState exists, retrieve the saved joke */
                 joke = savedInstanceState.getString(jokeKey);
-            } else {
+            } else if (getActivity().getIntent() != null){
                 /* If the savedInstanceState doesn't exist, retrieve the joke from the intent */
                 Intent intent = getActivity().getIntent();
                 joke = intent.getStringExtra(jokeKey);
