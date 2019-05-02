@@ -1,4 +1,4 @@
-Build It Bigger
+# Build It Bigger
 
 "Build It Bigger" project for the Udacity Android Developer Nanodegree program
 
@@ -6,10 +6,10 @@ The application for displaying jokes, consisting of four modules: a Java library
 
 The application has a free flavor that displays an ad, and a paid flavor without the ads.
 
-Instructions to set up Google Cloud Endpoints (GCE):
+## Instructions to set up Google Cloud Endpoints (GCE):
 
 Before going ahead you will need to be able to run a local instance of the GCE server. 
-In order to do that you will have to install the Cloud SDK:
+In order to do that you will have to install the _Cloud SDK_:
 
 https://cloud.google.com/sdk/docs/
 
@@ -19,6 +19,6 @@ https://cloud.google.com/endpoints/docs/frameworks/java/migrating-android
 
 Note: You do not need to follow the rest of steps in the migration guide, only the Setup Cloud SDK.
 
-Start or stop your local server by using the gradle tasks "appengineStart" and "appengineStop", located at "Gradle" --> ":backend" --> ":Tasks" --> "app engine standard environment".
+Start or stop your local server by using the gradle tasks **"appengineStart"** and **"appengineStop"**, located at "Gradle" --> ":backend" --> ":Tasks" --> "app engine standard environment".
 
-Once your local GCE server is started you should see a "Hello, Endpoints!" website at localhost:8080.
+Once your local GCE server is started you should see a _"Hello, Endpoints!"_ website at localhost:8080.
